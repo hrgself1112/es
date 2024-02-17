@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@estivasoftech/ui": ["libs/shared/src/index.ts"],
+      "@estivasoftech/ui/server": ["libs/shared/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

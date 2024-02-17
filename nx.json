@@ -13,7 +13,10 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js"
+      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/cypress/**/*",
+      "!{projectRoot}/**/*.cy.[jt]s?(x)",
+      "!{projectRoot}/cypress.config.[jt]s"
     ],
     "sharedGlobals": []
   },
@@ -37,7 +40,16 @@
       "options": {
         "targetName": "lint"
       }
-    }
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
+      }
+    },
+    "@nxtensions/astro"
   ],
   "generators": {
     "@nx/next": {
@@ -45,7 +57,23 @@
         "style": "css",
         "linter": "eslint"
       }
+    },
+    "@nx/react": {
+      "library": {}
     }
   },
-  "nxCloudAccessToken": "OTg5MTVhN2QtZTAwOS00ZTg3LWJhYWItYTE1OTNhODRlZTMwfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "OTg5MTVhN2QtZTAwOS00ZTg3LWJhYWItYTE1OTNhODRlZTMwfHJlYWQtd3JpdGU=",
+  "targetDefaults": {
+    "check": {
+      "cache": true,
+      "inputs": ["production", "^production"]
+    },
+    "e2e": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "build-custom-server": {
+      "cache": true
+    }
+  }
 }

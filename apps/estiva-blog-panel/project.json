@@ -1,0 +1,8 @@
+{
+  "name": "estiva-blog-panel",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/estiva-blog-panel",
+  "projectType": "application",
+  "targets": {},
+  "tags": []
+}
